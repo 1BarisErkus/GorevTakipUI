@@ -1,0 +1,87 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12 bg-light">
+            <div class="card text-left">
+                <div class="card-header"><b>Kayıt Ekle</b></div>
+                <div class="card-body">
+                    <form [formGroup]="fgKayit" action="" class="col-12">
+                        <!-- <div class="mb-3">
+                        <label for="kayit_tarihi" class="form-label">Kayıt Tarihi</label>
+                        <input type="date" class="form-control" id="kayit_tarihi" formControlName="kayit_tarihi">
+                    </div> -->
+                        <!-- <div class="mb-3">
+                        <label for="son_degisiklik_tarihi" class="form-label">Son değişiklik tarihi</label>
+                        <input type="date" class="form-control" id="son_degisiklik_tarihi" formControlName="son_degisiklik_tarihi">
+                    </div> -->
+                        <div class="input-group mb-3">
+                            <label class="input-group-text" for="degisiklik_gecmisi">Değişiklik Geçmişi</label>
+                            <textarea type="text" class="form-control" id="degisiklik_gecmisi"
+                                formControlName="degisiklik_gecmisi" readonly></textarea>
+
+                        </div>
+                        <div class="input-group mb-3">
+
+                            <label class="input-group-text" for="kimden_id">Kimden</label>
+                            <select class="form-select" id="kimden_id" formControlName="kimden_id">
+                                <option *ngFor="let item of personel" value="{{item.ref_id}}">{{item.ad}}</option>
+                            </select>
+                        </div>
+                        <div class="input-group mb-3">
+
+                            <label class="input-group-text" for="kime_id">Kime</label>
+                            <select class="form-select" id="kime_id" formControlName="kime_id">
+                                <option *ngFor="let item of personel" value="{{item.ref_id}}">{{item.ad}}</option>
+                            </select>
+                        </div>
+                        <div class="input-group mb-3">
+                            <label class="input-group-text" for="konu">Konu</label>
+                            <input type="text" class="form-control" id="konu" formControlName="konu" maxlength="100">
+
+                        </div>
+                        <div class="input-group mb-3">
+                            <label class="input-group-text" for="aciklama">Açıklama</label>
+                            <input type="text" class="form-control" id="aciklama" formControlName="aciklama">
+
+                        </div>
+                        <div class="input-group mb-3">
+                            <label class="input-group-text" for="grup">Grup</label>
+                            <input type="text" class="form-control" id="grup" formControlName="grup">
+
+                        </div>
+                        <div class="input-group mb-3">
+                            <label class="input-group-text" for="durum">Durum</label>
+                            <select class="form-select" id="durum" formControlName="durum">
+                                <option value="1">Yeni</option>
+                                <option value="2">Atanmış</option>
+                                <option value="3">Çözümlenmis</option>
+                                <option value="4">Kapanmış</option>
+                            </select>
+                        </div>
+                        <div class="input-group mb-3">
+                            <label class="input-group-text" for="son_tarih">Son Tarih</label>
+                            <input type="date" class="form-control" id="son_tarih" formControlName="son_tarih">
+                            <label class="input-group-text" for="son_tarih_saat">Saat</label>
+                            <input type="time" class="form-control" id="son_tarih_saat"
+                                formControlName="son_tarih_saati">
+                        </div>
+                        <div class="input-group mb-3">
+                            <label class="input-group-text" for="yapilma_tarihi">Yapılma Tarih</label>
+                            <input type="date" class="form-control" id="yapilma_tarihi"
+                                formControlName="yapilma_tarihi">
+                            <label class="input-group-text" for="yapilma_tarihi_saat">Saat</label>
+                            <input type="time" class="form-control" id="yapilma_tarihi_saat"
+                                formControlName="yapilma_tarihi_saati">
+                        </div>
+                        <div class="d-grid gap-3">
+                            <input type="submit" class="btn btn-warning py-3 mb-1" (click)="add_update_gorev()"
+                                value="Kaydet">
+                        </div>
+                    </form>
+                </div>
+                <div class="footer pb-1"><small>Lütfen boş alan bırakmayınız...</small></div>
+            </div>
+
+
+        </div>
+    </div>
+</div>

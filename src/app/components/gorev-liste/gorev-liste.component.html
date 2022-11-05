@@ -1,0 +1,57 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="mx-auto">
+            <div class="card text-left">
+                <div class="card-header">
+                    <h4>Görev Listesi</h4>
+                    <div class="input-group">
+                        <label class="input-group-text" for="ara">Arama</label>
+                        <input type="text" class="form-control" id="ara" [(ngModel)]="inputArama" (keyup)="kayitAra(inputArama)">
+                    </div>
+
+                    <div class="card-body">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Kayıt Tarihi</th>
+                                    <th>Son Değişiklik Tarihi</th>
+                                    <th>Değişiklik Geçmişi</th>
+                                    <th>Kimden</th>
+                                    <th>Kime</th>
+                                    <th>Konu</th>
+                                    <th>Açıklama</th>
+                                    <th>Grup</th>
+                                    <th>Durum</th>
+                                    <th>Son Tarih</th>
+                                    <th>Yapılma Tarihi</th>
+                                    <th></th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let item of gorevListe, let i = index">
+                                    <td>{{ item.ref_id }}</td>
+                                    <td>{{ item.kayit_tarihi }}</td>
+                                    <td>{{ item.son_degisiklik_tarihi }}</td>
+                                    <td>{{ item.degisiklik_gecmisi }}</td>
+                                    <td>{{ item.kimden_id }}</td>
+                                    <td>{{ item.kime_id }}</td>
+                                    <td>{{ item.konu }}</td>
+                                    <td>{{ item.aciklama }}</td>
+                                    <td>{{ item.grup }}</td>
+                                    <td>{{ item.durum }}</td>
+                                    <td>{{ item.son_tarih }}</td>
+                                    <td>{{ item.yapilma_tarihi }}</td>
+                                    <td><button class="btn btn-primary"
+                                            (click)="kayitDegistir(item.ref_id)">Değiştir</button></td>
+                                    <td><button class="btn btn-danger" (click)="kayitSil(item.ref_id)">Sil</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="card-footer">Product by Barış Erkuş</div>
+                </div>
+            </div>
+        </div>
+    </div>
